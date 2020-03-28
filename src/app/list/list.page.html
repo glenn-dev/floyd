@@ -1,27 +1,67 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title>
-      List
-    </ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title [routerLink]="['/home']">
+            Menu
+        </ion-title>
+    </ion-toolbar>
 </ion-header>
+<ion-split-pane>
+    <ion-menu type="overlay">
+        <ion-content>
+            <ion-menu-toggle auto-hide="false">
+                <ion-list class="list-menu">
+                    <ion-item class="list-item" [routerLink]="['/lyrics']">
+                        <ion-label>
+                            <h1>Lirycs</h1>
+                        </ion-label>
+                        <ion-avatar slot="end">
+                            <img src="./assets/icon/lyrics-icon.svg" alt="lyrics-icon">
+                        </ion-avatar>
+                    </ion-item>
 
-<ion-content>
-  <ion-list>
-    <ion-item *ngFor="let item of items">
-      <ion-icon [name]="item.icon" slot="start"></ion-icon>
-      {{item.title}}
-      <div class="item-note" slot="end">
-        {{item.note}}
-      </div>
-    </ion-item>
-  </ion-list>
-  <!--
-    <div *ngIf="selectedItem" padding>
-      You navigated here from <b>{{selectedItem.title }}</b>
-    </div>
-  -->
-</ion-content>
+                    <ion-item class="list-item" [routerLink]="['/albums']">
+                        <ion-label>
+                            <h1>Albums</h1>
+                        </ion-label>
+                        <ion-avatar slot="end">
+                            <img src="./assets/icon/album-icon.svg" alt="lyrics-icon">
+                        </ion-avatar>
+                    </ion-item>
+
+                    <ion-item class="list-item" [routerLink]="['/members']">
+                        <ion-label>
+                            <h1>Members</h1>
+                        </ion-label>
+                        <ion-avatar slot="end">
+                            <img src="./assets/icon/members-icon.svg" alt="lyrics-icon">
+                        </ion-avatar>
+                    </ion-item>
+
+                    <ion-item class="list-item" [routerLink]="['/gallery']">
+                        <ion-label>
+                            <h1>Gallery</h1>
+                        </ion-label>
+                        <ion-avatar slot="end">
+                            <img src="./assets/icon/gallery-icon.svg" alt="lyrics-icon">
+                        </ion-avatar>
+                    </ion-item>
+
+                    <ion-item class="list-item" [routerLink]="['/videos']">
+                        <ion-label>
+                            <h1>Videos</h1>
+                        </ion-label>
+                        <ion-avatar slot="end">
+                            <img src="./assets/icon/videos-icon.svg" alt="lyrics-icon">
+                        </ion-avatar>
+                    </ion-item>
+                </ion-list>
+
+            </ion-menu-toggle>
+
+        </ion-content>
+    </ion-menu>
+    <ion-router-outlet main></ion-router-outlet>
+</ion-split-pane>

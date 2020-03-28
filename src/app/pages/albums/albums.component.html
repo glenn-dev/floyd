@@ -1,0 +1,18 @@
+<ion-header class="content-pages" translucent>
+    <ion-toolbar>
+        <ion-title>Albums</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+    <ion-list>
+        <ion-item *ngFor="let albums of albumService.albums">
+            <ion-avatar>"
+                <img src="../../../assets/AlbumCover/{{albums.cover}}">
+            </ion-avatar>
+            <ion-label>
+                <h2>{{albums.name}}</h2>
+                <h3>{{albums.released}}</h3>
+                <p>{{albums.albumLength}}</p>
+            </ion-label>
+        </ion-item>
